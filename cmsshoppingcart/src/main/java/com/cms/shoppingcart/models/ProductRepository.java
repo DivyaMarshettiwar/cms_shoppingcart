@@ -1,5 +1,7 @@
 package com.cms.shoppingcart.models;
 
+import java.util.List;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -14,4 +16,8 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 
 	// for pagination
 	Page<Product> findAll(Pageable pageable);
+
+	List<Product> findAllByCategoryId(String categoryId, Pageable pageable);
+
+	long countByCategoryId(String categoryId);
 }

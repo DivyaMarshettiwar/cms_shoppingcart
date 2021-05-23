@@ -62,7 +62,7 @@ public class AdminProductsController {
 		model.addAttribute("cats", cats);
 		
 		// for pagination
-		Long count = productRepo.count();
+		long count = productRepo.count();
 		double pageCount = Math.ceil((double)count / (double)perPage);
 		
 		model.addAttribute("pageCount", (int)pageCount);
